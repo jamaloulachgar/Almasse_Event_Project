@@ -1,0 +1,227 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * ALMASSE EVENTS — luxury design system.
+ * Palette: deep green #0E3B3C, sand #F7F2EB, secondary #EFE5D8,
+ * gold #C7A56A, dark text #3F3B38, light gray #B8B2AA.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-sand: var(--sand);
+  --color-ink: var(--ink);
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.03), 0 18px 50px -24px oklch(0.28 0.05 170 / 0.22);
+  --shadow-lift: 0 30px 80px -34px oklch(0.28 0.05 170 / 0.35);
+  --ease-luxe: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(0.966 0.014 84.6); /* #F7F2EB */
+  --foreground: oklch(0.35 0.008 60); /* #3F3B38 */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.35 0.008 60);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.35 0.008 60);
+  --primary: oklch(0.335 0.041 187); /* #0E3B3C */
+  --primary-foreground: oklch(0.98 0.01 84);
+  --secondary: oklch(0.925 0.023 79); /* #EFE5D8 */
+  --secondary-foreground: oklch(0.335 0.041 187);
+  --muted: oklch(0.935 0.018 82);
+  --muted-foreground: oklch(0.62 0.011 70); /* #B8B2AA-ish */
+  --accent: oklch(0.723 0.068 78.5); /* gold #C7A56A */
+  --accent-foreground: oklch(0.24 0.03 187);
+  --destructive: oklch(0.55 0.19 25);
+  --destructive-foreground: oklch(0.98 0.01 84);
+  --border: oklch(0.885 0.018 80);
+  --input: oklch(0.885 0.018 80);
+  --ring: oklch(0.723 0.068 78.5);
+  --gold: oklch(0.723 0.068 78.5);
+  --gold-soft: oklch(0.86 0.038 83);
+  --sand: oklch(0.925 0.023 79);
+  --ink: oklch(0.35 0.008 60);
+}
+
+.dark {
+  --background: oklch(0.198 0.024 187);
+  --foreground: oklch(0.95 0.012 84);
+  --card: oklch(0.245 0.028 187);
+  --card-foreground: oklch(0.95 0.012 84);
+  --popover: oklch(0.245 0.028 187);
+  --popover-foreground: oklch(0.95 0.012 84);
+  --primary: oklch(0.925 0.023 79);
+  --primary-foreground: oklch(0.24 0.03 187);
+  --secondary: oklch(0.285 0.03 187);
+  --secondary-foreground: oklch(0.95 0.012 84);
+  --muted: oklch(0.285 0.03 187);
+  --muted-foreground: oklch(0.75 0.015 84);
+  --accent: oklch(0.75 0.075 79);
+  --accent-foreground: oklch(0.2 0.025 187);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.75 0.075 79);
+  --gold: oklch(0.78 0.075 79);
+  --gold-soft: oklch(0.5 0.05 82);
+  --sand: oklch(0.285 0.03 187);
+  --ink: oklch(0.95 0.012 84);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    letter-spacing: 0.01em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: -0.015em;
+  }
+
+  ::selection {
+    background: var(--gold);
+    color: var(--primary-foreground);
+  }
+}
+
+/* Editorial eyebrow label */
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+@utility display-hero {
+  font-family: var(--font-display);
+  font-weight: 300;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+
+@utility glass-panel {
+  background: color-mix(in oklab, var(--background) 62%, transparent);
+  backdrop-filter: blur(22px) saturate(150%);
+  border: 1px solid color-mix(in oklab, var(--gold) 22%, transparent);
+}
+
+@utility gold-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--gold) 80%, transparent),
+    transparent
+  );
+}
+
+@utility hover-lift {
+  transition:
+    transform 0.7s var(--ease-luxe),
+    box-shadow 0.7s var(--ease-luxe);
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lift);
+  }
+}
+
+@utility link-underline {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 100%;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s var(--ease-luxe);
+  }
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@keyframes almasse-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--gold) 55%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 18px color-mix(in oklab, var(--gold) 0%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--gold) 0%, transparent);
+  }
+}
+
+@utility pulse-gold {
+  animation: almasse-pulse 2.4s infinite;
+}
+
+@keyframes almasse-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(1.2deg);
+  }
+}
+
+@utility float-slow {
+  animation: almasse-float 9s ease-in-out infinite;
+}
