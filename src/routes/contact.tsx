@@ -23,7 +23,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contactez Almasse Events sur WhatsApp au +212 713 743 269, par email ou sur Instagram pour vos créations personnalisées au Maroc.",
+          "Contactez Almasse Events sur WhatsApp au +212 718 312 874, par email ou sur Instagram pour vos créations personnalisées au Maroc.",
       },
       { property: "og:title", content: "Contact — Almasse Events" },
       {

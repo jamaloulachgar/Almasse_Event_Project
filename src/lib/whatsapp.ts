@@ -1,5 +1,5 @@
-export const WHATSAPP_NUMBER = "212713743269";
-export const WHATSAPP_DISPLAY = "+212 713 743 269";
+export const WHATSAPP_NUMBER = "212718312874";
+export const WHATSAPP_DISPLAY = "+212 718 312 874";
 export const EMAIL = "almasse_events@gmail.com";
 export const INSTAGRAM_URL = "https://www.instagram.com/almasse_events";
 export const INSTAGRAM_HANDLE = "@almasse_events";

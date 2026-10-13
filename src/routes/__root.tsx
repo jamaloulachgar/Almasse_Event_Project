@@ -113,7 +113,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "Almasse Events",
           description:
             "Créations personnalisées haut de gamme faites main : miroirs, coffrets, décorations acryliques pour mariages, graduations, henné et cadeaux.",
-          telephone: "+212713743269",
+          telephone: "+212718312874",
           email: "almasse_events@gmail.com",
           areaServed: "MA",
           sameAs: ["https://www.instagram.com/almasse_events"],
